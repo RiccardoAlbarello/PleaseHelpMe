@@ -56,13 +56,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Flattening_Amount: -0.34
+    - _Flattening_Amount: -1.71
     - _Interaction_Flatten: -1.54
-    - _Interaction_Radius: 1.58
+    - _Interaction_Radius: 5.09
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 1.5
-    - _Spreading_Amount: -0.82
+    - _Spreading_Amount: -0.58
     - _TEST: -1.23
     - _Wind_Amount: 0.391
     - _Wind_Speed: 0.1
