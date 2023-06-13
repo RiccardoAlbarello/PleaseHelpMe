@@ -18,6 +18,11 @@ public class RopeSpawn : MonoBehaviour
     [SerializeField]
     bool reset, spawn, snapFirst, snapLast;
 
+    private bool canInteract = false;
+
+    private GameObject InteractableObject;
+
+
     void Update()
     {
         if (reset) 
@@ -25,6 +30,20 @@ public class RopeSpawn : MonoBehaviour
             foreach (GameObject tmp in GameObject.FindGameObjectsWithTag("Rope")) 
             {
                 Destroy(tmp);
+            }
+
+            reset = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I) && canInteract == true) 
+        {
+            if (spawn == false)
+            {
+                spawn = true;
+            }
+            else if (spawn == true) 
+            {
+                spawn = false;
             }
         }
 
@@ -51,6 +70,7 @@ public class RopeSpawn : MonoBehaviour
             if (x == 0)
             {
                 Destroy(tmp.GetComponent<CharacterJoint>());
+
                 if (snapFirst)
                 {
                     tmp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -59,13 +79,34 @@ public class RopeSpawn : MonoBehaviour
             else
             {
                 tmp.GetComponent<CharacterJoint>().connectedBody = parentObject.transform.Find((parentObject.transform.childCount - 1).ToString()).GetComponent<Rigidbody>();
-
             }
         }
         if (snapLast) 
         {
             parentObject.transform.Find((parentObject.transform.childCount).ToString()).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Interactable")) 
+        {
+            InteractableObject = other.gameObject;
+
+            Debug.Log("Entrato");
+
+            canInteract = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canInteract = false;
+
+        InteractableObject = null;
 
     }
 }
