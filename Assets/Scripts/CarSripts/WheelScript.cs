@@ -39,6 +39,12 @@ public class WheelScript : MonoBehaviour
     [Header("Wheel")]
     public float wheelRadius;
 
+    [Header("Grounded")]
+    public LayerMask groundLayer;
+    public bool grounded;
+    public RaycastHit groundedHit;
+
+
     private void Start()
     {
         rb = transform.root.GetComponent<Rigidbody>();
@@ -54,6 +60,16 @@ public class WheelScript : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * wheelAngle);
 
         Debug.DrawRay(transform.position, -transform.up * (springLength + wheelRadius), Color.green);
+
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius, groundLayer))
+        {
+            grounded = true;
+            groundedHit = hit;
+        }
+        else 
+        {
+            grounded = false;
+        }
     }
 
     private void FixedUpdate()

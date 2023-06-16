@@ -17,6 +17,19 @@ public class CarController : MonoBehaviour
     private float ackermanAngleLeft;
     private float ackermanAngleRight;
 
+    [Header("FallDamage")]
+    public float fallThresholdVelocity = 5f;
+    public Transform groundCheck;
+    public float groundDistance;
+    public LayerMask groundLayer;
+
+    private bool grounded;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -47,5 +60,15 @@ public class CarController : MonoBehaviour
             if (w.wheelFrontRight)
                 w.steerAngle = ackermanAngleRight;
         }
+
+
+        bool previousGrounded = grounded;
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance,groundLayer, QueryTriggerInteraction.Ignore);
+
+        if ((!previousGrounded && grounded) && rb.velocity.y < -fallThresholdVelocity) 
+        {
+            //TODO: Respawn;
+        }
+
     }
 }
