@@ -22,6 +22,8 @@ public class RopeSpawn : MonoBehaviour
 
     private GameObject InteractableObject;
 
+    private GameObject lastPartRope;
+
 
     void Update()
     {
@@ -52,7 +54,8 @@ public class RopeSpawn : MonoBehaviour
             Spawn();
 
             spawn = false;
-        }
+        }   
+            
     }
 
     public void Spawn() 
@@ -80,6 +83,8 @@ public class RopeSpawn : MonoBehaviour
             {
                 tmp.GetComponent<CharacterJoint>().connectedBody = parentObject.transform.Find((parentObject.transform.childCount - 1).ToString()).GetComponent<Rigidbody>();
             }
+
+            lastPartRope = tmp;
         }
         if (snapLast) 
         {
@@ -95,7 +100,7 @@ public class RopeSpawn : MonoBehaviour
         {
             InteractableObject = other.gameObject;
 
-            Debug.Log("Entrato");
+            Debug.Log(InteractableObject.name);
 
             canInteract = true;
         }
