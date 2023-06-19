@@ -10,6 +10,9 @@ public class CarController : MonoBehaviour
     public float wheelBase;
     public float rearTrack;
     public float turnRadius;
+    public float maxVelocity;
+
+  
 
     [Header("Inputs")]
     public float steerInput;
@@ -33,6 +36,18 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.C)) 
+        {
+            rb.velocity = new Vector3(0,0,0);
+        }
+
+
+        if (rb.velocity.magnitude > maxVelocity) 
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+        }
+        
 
         steerInput = Input.GetAxis("Horizontal");
 
@@ -64,11 +79,36 @@ public class CarController : MonoBehaviour
 
         bool previousGrounded = grounded;
         grounded = Physics.CheckSphere(groundCheck.position, groundDistance,groundLayer, QueryTriggerInteraction.Ignore);
+        
+
+        if (!grounded)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        else if (grounded) 
+        {
+            rb.constraints = RigidbodyConstraints.None;
+        }
 
         if ((!previousGrounded && grounded) && rb.velocity.y < -fallThresholdVelocity) 
         {
             //TODO: Respawn;
         }
 
+
+
     }
+
+    
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(groundCheck.position, groundDistance);
+ 
+    }
+
+ 
 }
+
