@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rope
   - Interactable
+  - Platform
   layers:
   - Default
   - TransparentFX
