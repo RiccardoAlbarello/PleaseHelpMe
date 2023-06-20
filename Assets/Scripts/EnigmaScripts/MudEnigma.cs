@@ -35,4 +35,9 @@ public class MudEnigma : MonoBehaviour
     {
         platformCheck.Remove(platform);
     }
+
+    public void AddPlatform(GameObject platform)
+    {
+        platformCheck.Add(platform);
+    }
 }
