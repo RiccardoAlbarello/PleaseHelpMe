@@ -11,6 +11,8 @@ public class WheelScript : MonoBehaviour
     public bool wheelRearLeft;
     public bool wheelRearRight;
 
+    [Header("Velocity")]
+    public float speed = 0.5f;
 
     [Header("Suspension")]
     public float restLenght;
@@ -87,11 +89,15 @@ public class WheelScript : MonoBehaviour
 
             wheelVelocityLS = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
 
-            Fx = Input.GetAxis("Vertical") * 0.5f * springForce;
+            //Fx = Input.GetAxis("Vertical") * 0.5f * springForce;
+            Fx = Input.GetAxis("Vertical") * speed * springForce;
+
 
             Fy = wheelVelocityLS.x * springForce;
 
             rb.AddForceAtPosition(suspensionForce + (Fx * transform.forward) + (Fy * -transform.right), hit.point);
+
+            
         
         }
     }
