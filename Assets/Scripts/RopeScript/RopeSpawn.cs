@@ -21,8 +21,14 @@ public class RopeSpawn : MonoBehaviour
     private bool canInteract = false;
 
     private GameObject InteractableObject;
+    private CharacterJoint characterJointObject;
+
 
     private GameObject lastPartRope;
+    private Rigidbody lastPartRopeRB;
+
+
+    private bool ropeIsSpawned = false;
 
 
     void Update()
@@ -54,7 +60,7 @@ public class RopeSpawn : MonoBehaviour
             Spawn();
 
             spawn = false;
-        }   
+        }
             
     }
 
@@ -85,11 +91,14 @@ public class RopeSpawn : MonoBehaviour
             }
 
             lastPartRope = tmp;
+            
         }
         if (snapLast) 
         {
             parentObject.transform.Find((parentObject.transform.childCount).ToString()).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
+
+        
 
     }
 
@@ -115,3 +124,5 @@ public class RopeSpawn : MonoBehaviour
 
     }
 }
+
+ 
