@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
+    [Header("Mud Platform")]
     [SerializeField] MudEnigma mudEnigma;
 
-    //[SerializeField] float timerBeforeSetActive;
-    //[SerializeField] float timer;
+    [Header("Time Settings")]
+    [SerializeField] float timeBeforeDeactivated;
+
+    Renderer renderers;
 
     private void Update()
     {
-        
+        renderers = GetComponent<Renderer>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             mudEnigma.RemovePlatform(gameObject);
-            gameObject.SetActive(false);
-            //StartCoroutine(reactive());
+            renderers.material.color = Color.yellow;
+            StartCoroutine(Deactive());
         }
     }
 
-    IEnumerator reactive()
+    IEnumerator Deactive()
     {
-        yield return new WaitForSeconds(5);
-        gameObject.SetActive(true);
+        yield return new WaitForSeconds(timeBeforeDeactivated);
+        renderers.material.color = Color.black;
         mudEnigma.AddPlatform(gameObject);
     }
 }
