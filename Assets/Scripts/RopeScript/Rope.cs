@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
-
     private LineRenderer lineRenderer;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
     private float ropeSegLen = 0.25f;
     private int segmentLength = 35;
     private float lineWidth = 0.1f;
+    public float maxDist = 10f;
     [SerializeField] private Transform startPoint;
-    [SerializeField] private Transform endPoint;
+    private Transform endPoint;
+    private GameObject InteractableObject;
+    private ConfigurableJoint configurableJoint;
+    public bool spawn = false;
+    public bool canInteract = false;
+    Rigidbody rb;
 
     // Use this for initialization
     void Start()
@@ -24,32 +29,59 @@ public class Rope : MonoBehaviour
             this.ropeSegments.Add(new RopeSegment(ropeStartPoint));
             ropeStartPoint.y -= ropeSegLen;
         }
+
+        
+        rb = transform.root.GetComponent<Rigidbody>();
+        Debug.Log(rb.transform.name);
+        configurableJoint = gameObject.GetComponent<ConfigurableJoint>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.DrawRope();
+
+        if (Input.GetKeyDown(KeyCode.I) && canInteract == true)
+        {
+            if (spawn == false)
+            {
+                spawn = true;
+            }
+            else if (spawn == true)
+            {
+                spawn = false;
+                Destroy(lineRenderer);
+                configurableJoint.connectedBody = null;
+            }
+        }
+
+        if (spawn)
+        {
+            this.DrawRope();
+        }
     }
 
     private void FixedUpdate()
     {
-        this.Simulate();
+        if (spawn)
+        {
+            this.Simulate();
+        }
     }
 
     private void Simulate()
     {
         // SIMULATION
-        Vector2 forceGravity = new Vector3(0f, -1.5f);
+        Vector3 forceGravity = new Vector3(0f, -1.5f, 0f);
 
         for (int i = 1; i < this.segmentLength; i++)
         {
             RopeSegment firstSegment = this.ropeSegments[i];
-            Vector2 velocity = firstSegment.posNow - firstSegment.posOld;
+            Vector3 velocity = firstSegment.posNow - firstSegment.posOld;
             firstSegment.posOld = firstSegment.posNow;
             firstSegment.posNow += velocity;
             firstSegment.posNow += forceGravity * Time.fixedDeltaTime;
             this.ropeSegments[i] = firstSegment;
+            
         }
 
         //CONSTRAINTS
@@ -71,6 +103,8 @@ public class Rope : MonoBehaviour
         endSegment.posNow = this.endPoint.position;
         this.ropeSegments[this.segmentLength - 1] = endSegment;
 
+        
+
         for (int i = 0; i < this.segmentLength - 1; i++)
         {
             RopeSegment firstSeg = this.ropeSegments[i];
@@ -78,7 +112,7 @@ public class Rope : MonoBehaviour
 
             float dist = (firstSeg.posNow - secondSeg.posNow).magnitude;
             float error = Mathf.Abs(dist - this.ropeSegLen);
-            Vector2 changeDir = Vector3.zero;
+            Vector3 changeDir = Vector3.zero;
 
             if (dist > ropeSegLen)
             {
@@ -89,7 +123,7 @@ public class Rope : MonoBehaviour
                 changeDir = (secondSeg.posNow - firstSeg.posNow).normalized;
             }
 
-            Vector2 changeAmount = changeDir * error;
+            Vector3 changeAmount = changeDir * error;
             if (i != 0)
             {
                 firstSeg.posNow -= changeAmount * 0.5f;
@@ -123,13 +157,46 @@ public class Rope : MonoBehaviour
 
     public struct RopeSegment
     {
-        public Vector2 posNow;
-        public Vector2 posOld;
+        public Vector3 posNow;
+        public Vector3 posOld;
 
-        public RopeSegment(Vector2 pos)
+        public RopeSegment(Vector3 pos)
         {
             this.posNow = pos;
             this.posOld = pos;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Interactable"))
+        {
+            InteractableObject = other.gameObject;
+
+            endPoint = InteractableObject.transform;
+
+            canInteract = true;
+            configurableJoint.connectedBody = InteractableObject.GetComponent<Rigidbody>();
+
+            Debug.Log(InteractableObject.name);
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interactable") && spawn == false)
+        {
+            configurableJoint.connectedBody = null;
+
+            if (InteractableObject != null)
+            {
+                InteractableObject = null;
+            }
+
+            canInteract = false;
+        }
+        
     }
 }
