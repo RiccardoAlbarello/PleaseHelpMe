@@ -17,6 +17,7 @@ public class Rope : MonoBehaviour
     public bool spawn = false;
     public bool canInteract = false;
     Rigidbody rb;
+    public KeyCode code;
 
     // Use this for initialization
     void Start()
@@ -40,7 +41,7 @@ public class Rope : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && canInteract == true)
+        if (Input.GetKeyDown(code) && canInteract == true)
         {
             if (spawn == false)
             {
