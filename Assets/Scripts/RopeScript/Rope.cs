@@ -48,8 +48,10 @@ public class Rope : MonoBehaviour
             }
             else if (spawn == true)
             {
+                canInteract = false;
                 spawn = false;
-                Destroy(lineRenderer);
+                lineRenderer.positionCount = 0;
+                endPoint = null;
                 configurableJoint.connectedBody = null;
             }
         }
