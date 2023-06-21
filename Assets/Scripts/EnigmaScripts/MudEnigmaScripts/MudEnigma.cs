@@ -29,6 +29,10 @@ public class MudEnigma : MonoBehaviour
         {
             lever.SetActive(true);
         }
+        else
+        {
+            lever.SetActive(false);
+        }
     }
  
     public void RemovePlatform(GameObject platform)
