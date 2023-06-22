@@ -56,18 +56,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Flattening_Amount: -1.71
+    - _Flattening_Amount: -1.36
     - _Interaction_Flatten: -1.54
-    - _Interaction_Radius: 1.7
+    - _Interaction_Radius: 4.86
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 1.5
-    - _Spreading_Amount: -0.58
+    - _Spreading_Amount: -0.62
     - _TEST: -1.23
     - _Wind_Amount: 0.391
     - _Wind_Speed: 0.1
     m_Colors:
-    - _Base_Color: {r: 0.40784314, g: 0.5568628, b: 0.38431373, a: 0}
+    - _Base_Color: {r: 0.4118944, g: 0.509434, b: 0.39649343, a: 0}
     - _Player: {r: 0, g: 0, b: 0, a: 0}
     - _Tip_Color: {r: 0.63743854, g: 0.764151, b: 0.5082325, a: 0}
   m_BuildTextureStacks: []

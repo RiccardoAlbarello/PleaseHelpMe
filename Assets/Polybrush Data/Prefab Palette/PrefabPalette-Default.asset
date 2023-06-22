@@ -20,7 +20,7 @@ MonoBehaviour:
       m_RotationRangeMin: {x: -10, y: 0, z: -10}
       m_RotationRangeMax: {x: 10, y: 360, z: 10}
       m_ScaleRangeMin: {x: 1, y: 0.9, z: 1}
-      m_ScaleRangeMax: {x: 1, y: 1.1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1.6102042, z: 1}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 1
@@ -30,3 +30,20 @@ MonoBehaviour:
       m_YScaleBool: 1
       m_ZScaleBool: 0
     name: Grass01
+  - gameObject: {fileID: 1216235840376344162, guid: b0866ae63cc17e444bb0a9c5f69da278,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 1
+      m_ZScaleBool: 0
+    name: ENV_Flowers
