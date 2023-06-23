@@ -10,6 +10,7 @@ public class WheelScript : MonoBehaviour
     public bool wheelFrontRight;
     public bool wheelRearLeft;
     public bool wheelRearRight;
+    public Animator animator;
 
     [Header("Velocity")]
     public float speed = 0.5f;
@@ -49,6 +50,7 @@ public class WheelScript : MonoBehaviour
 
     private void Start()
     {
+
         rb = transform.root.GetComponent<Rigidbody>();
 
         minLength = restLenght - springTravel;
@@ -72,6 +74,38 @@ public class WheelScript : MonoBehaviour
         {
             grounded = false;
         }
+
+        Debug.Log(Input.GetAxisRaw("Vertical"));
+
+        if (animator != null) 
+        {
+            if (Input.GetAxisRaw("Vertical") > 0)
+            {
+                animator.SetBool("isMovingForward", true);
+            }
+            else 
+            {
+                animator.SetBool("isMovingForward", false);
+            }
+
+            if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                animator.SetBool("isMovingBack", true);
+            }
+            else
+            {
+                animator.SetBool("isMovingBack", false);
+            }
+
+            if (Input.GetAxisRaw("Vertical") == 0)
+            {
+                animator.SetBool("isStop", true);
+            }
+            else
+            {
+                animator.SetBool("isStop", false);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -91,7 +125,6 @@ public class WheelScript : MonoBehaviour
 
             //Fx = Input.GetAxis("Vertical") * 0.5f * springForce;
             Fx = Input.GetAxis("Vertical") * speed * springForce;
-
 
             Fy = wheelVelocityLS.x * springForce;
 

@@ -48,7 +48,7 @@ public class CarController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            rb.velocity = new Vector3(0.5f, 0.5f, 0.5f);
+            rb.velocity = new Vector3(0f, 0f, 0f);
         }
 
 
@@ -127,7 +127,7 @@ public class CarController : MonoBehaviour
 
         if (grounded == false && wheelsAreGrounded == false && jumping == true)
         {
-            transform.Rotate(0.0f, 0.0f, -Input.GetAxis("Horizontal") * 5);
+            transform.Rotate(0.0f, 0.0f, -Input.GetAxis("Horizontal") * 2);
         }
 
         if (Time.time > nextActionTime)
