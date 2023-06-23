@@ -23,7 +23,7 @@ public class Rope : MonoBehaviour
     void Start()
     {
         this.lineRenderer = this.GetComponent<LineRenderer>();
-        Vector3 ropeStartPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 ropeStartPoint = Vector3.zero;
 
         for (int i = 0; i < segmentLength; i++)
         {
