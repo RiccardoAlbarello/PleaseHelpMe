@@ -17,7 +17,8 @@ public class Rope : MonoBehaviour
     public bool spawn = false;
     public bool canInteract = false;
     Rigidbody rb;
-    public KeyCode code;
+    public KeyCode codeSpawn;
+    public KeyCode codeRiavvolgere;
 
     // Use this for initialization
     void Start()
@@ -41,7 +42,7 @@ public class Rope : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(code) && canInteract == true)
+        if (Input.GetKeyDown(codeSpawn) && canInteract == true)
         {
             if (spawn == false)
             {
@@ -55,6 +56,12 @@ public class Rope : MonoBehaviour
                 endPoint = null;
                 configurableJoint.connectedBody = null;
             }
+        }
+
+        if (Input.GetKey(codeSpawn))
+        {
+
+
         }
 
         if (spawn)
