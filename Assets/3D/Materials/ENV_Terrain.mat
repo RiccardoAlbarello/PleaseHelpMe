@@ -46,6 +46,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Rock_Base_Color:
+        m_Texture: {fileID: 2800000, guid: 82145c73aedd17d4e8449a99decfc915, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Normal_Map:
+        m_Texture: {fileID: 2800000, guid: a9fac51a7e9d2534097570180b853791, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Occlusion:
+        m_Texture: {fileID: 2800000, guid: 263233a2c7384cb4597b58e6413d9300, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_d099e3b252154f5792661eb852eaa171_Texture_1:
         m_Texture: {fileID: 2800000, guid: 6e5ebf2fdd5a8844ab388ff7954696b4, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -80,13 +92,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NormalSmoothstep1: 0
-    - _NormalSmoothstep2: 1
+    - _NormalSmoothstep1: 0.588
+    - _NormalSmoothstep2: 0.87
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RocksTiling: 0.92
+    - _RocksTiling: 0.74
+    - _Rotation: 0
+    - _Rotations: 147
     m_Colors:
     - _Color: {r: 0.40784314, g: 0.5568628, b: 0.38431373, a: 0}
-    - _Color1: {r: 0.4904, g: 0.5188679, b: 0.37936097, a: 0}
+    - _Color1: {r: 0.5176471, g: 0.4696612, b: 0.38039216, a: 0}
     - _Color2: {r: 0.4495788, g: 0.5754717, b: 0.40445888, a: 0}
+    - _Rock_Color: {r: 0.4339623, g: 0.29424745, b: 0.18218228, a: 0}
   m_BuildTextureStacks: []

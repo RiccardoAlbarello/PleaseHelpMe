@@ -56,7 +56,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Flattening_Amount: -1.36
+    - _Flattening_Amount: -0.52
     - _Interaction_Flatten: -1.54
     - _Interaction_Radius: 4.86
     - _QueueControl: 0
