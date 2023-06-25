@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000017033932, g: 0.000000025772884, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2319,14 +2319,14 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.08455245
-      value: 0.7767509
-      inSlope: 4.301304
-      outSlope: 4.301304
+      time: 0.07529037
+      value: 0.6360496
+      inSlope: 4.8275785
+      outSlope: 4.8275785
       tangentMode: 0
       weightedMode: 3
       inWeight: 0.4671038
-      outWeight: 0.072841
+      outWeight: 0.0954785
     - serializedVersion: 3
       time: 1
       value: 1
@@ -4127,8 +4127,10 @@ MonoBehaviour:
   startPoint: {fileID: 148588051}
   spawn: 0
   canInteract: 0
-  codeSpawn: 0
-  codeRiavvolgere: 0
+  codeSpawn: 117
+  codeRiavvolgere: 106
+  forzaVerricelloNormale: 300
+  forzaVerricelloAumentata: 1300
 --- !u!120 &1477287623
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4489,7 +4491,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.32941177, g: 0.84705883, b: 0.8784314, a: 1}
+  m_Color: {r: 0.09211463, g: 0.1653715, b: 0.16981131, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -4547,14 +4549,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562481665}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.1456101, y: -0, z: -0, w: -0.98934203}
+  m_LocalPosition: {x: 0, y: 641, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 343.255, y: 0, z: 0}
 --- !u!1 &1589409386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4844,14 +4846,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619934082}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 641, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1619934085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5562,8 +5564,10 @@ MonoBehaviour:
   startPoint: {fileID: 1985437438}
   spawn: 0
   canInteract: 0
-  codeSpawn: 0
-  codeRiavvolgere: 0
+  codeSpawn: 105
+  codeRiavvolgere: 107
+  forzaVerricelloNormale: 300
+  forzaVerricelloAumentata: 1300
 --- !u!120 &1878859163
 LineRenderer:
   m_ObjectHideFlags: 0

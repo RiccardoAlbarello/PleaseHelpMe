@@ -19,6 +19,8 @@ public class Rope : MonoBehaviour
     Rigidbody rb;
     public KeyCode codeSpawn;
     public KeyCode codeRiavvolgere;
+    public float forzaVerricelloNormale;
+    public float forzaVerricelloAumentata;
 
     // Use this for initialization
     void Start()
@@ -58,11 +60,81 @@ public class Rope : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(codeSpawn))
+        if (Input.GetKey(codeRiavvolgere))
         {
+            configurableJoint.angularYZDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloAumentata
+            };
 
+            configurableJoint.angularXDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloAumentata
+            };
 
+            configurableJoint.yDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloAumentata
+            };
+
+            configurableJoint.xDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloAumentata
+            };
+
+            configurableJoint.zDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloAumentata
+            };
         }
+        else 
+        {
+            configurableJoint.angularYZDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloNormale
+            };
+
+            configurableJoint.angularXDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloNormale
+            };
+
+            configurableJoint.yDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloNormale
+            };
+
+            configurableJoint.xDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloNormale
+            };
+
+            configurableJoint.zDrive = new JointDrive()
+            {
+                maximumForce = 3.402823e+38f,
+                positionDamper = 0,
+                positionSpring = forzaVerricelloNormale
+            };
+        }
+
 
         if (spawn)
         {
