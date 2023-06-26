@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5df0de97ed4f2d54181288ce9f1aad17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 418.2
+      value: 489.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5df0de97ed4f2d54181288ce9f1aad17,
         type: 3}
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 20, z: -70}
+  m_FollowOffset: {x: 0, y: 50, z: -130}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 20, z: -70}
+  m_FollowOffset: {x: 0, y: 50, z: -130}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1737,7 +1737,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634291102}
-  m_LocalRotation: {x: 0.1387012, y: 0.000000017040067, z: -0.0000000023865454, w: 0.99033433}
+  m_LocalRotation: {x: 0.18255739, y: -0.00000001691723, z: 0.0000000031411511, w: 0.98319525}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2909,7 +2909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27a11a5804c24a45adf5d1b227d0bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMultiplier: 3000
+  timeMultiplier: 100
   startHour: 12
   timeText: {fileID: 0}
   sunLight: {fileID: 1619934083}
@@ -4227,7 +4227,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336434939}
-  m_LocalRotation: {x: 0.12066458, y: 0.000000019096756, z: -0.0000000023212632, w: 0.99269336}
+  m_LocalRotation: {x: 0.16464335, y: -0.000000016971569, z: 0.0000000028329166, w: 0.98635316}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5040,12 +5040,12 @@ MonoBehaviour:
   m_BindingMode: 0
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 30
-    m_Radius: 90
-  - m_Height: 20
-    m_Radius: 70
-  - m_Height: 10
-    m_Radius: 30
+  - m_Height: 50
+    m_Radius: 130
+  - m_Height: 50
+    m_Radius: 130
+  - m_Height: 50
+    m_Radius: 130
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 634291103}
@@ -5059,7 +5059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522500807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 805.4, y: 22.99, z: 348.2}
+  m_LocalPosition: {x: 805.4, y: 52.99, z: 359.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6095,7 +6095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 20, z: -70}
+  m_FollowOffset: {x: 0, y: 50, z: -130}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6960,8 +6960,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984892365}
-  m_LocalRotation: {x: 0.1206646, y: 0.000000041620424, z: -0.0000000050590763, w: 0.99269336}
-  m_LocalPosition: {x: 805.4, y: 22.99, z: 348.2}
+  m_LocalRotation: {x: 0.16464336, y: -0.000000033943135, z: 0.0000000056658322, w: 0.98635316}
+  m_LocalPosition: {x: 805.4, y: 52.99, z: 359.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7132,7 +7132,7 @@ MonoBehaviour:
   wheelBase: 2.55
   rearTrack: 1.525
   turnRadius: 10.8
-  maxVelocity: 40
+  maxVelocity: 50
   wheelFrontLeft: {fileID: 485033925}
   wheelFrontRight: {fileID: 1647229901}
   wheelRearLeft: {fileID: 1557704043}
@@ -7577,7 +7577,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078950863}
-  m_LocalRotation: {x: 0.10263582, y: -0.000000017642268, z: 0.0000000018203419, w: 0.994719}
+  m_LocalRotation: {x: 0.14672238, y: 0.000000019029128, z: -0.000000002822545, w: 0.98917776}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
