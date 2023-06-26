@@ -10,7 +10,10 @@ public class WheelScript : MonoBehaviour
     public bool wheelFrontRight;
     public bool wheelRearLeft;
     public bool wheelRearRight;
+    public Animator animator;
 
+    [Header("Velocity")]
+    public float speed = 0.5f;
 
     [Header("Suspension")]
     public float restLenght;
@@ -39,8 +42,15 @@ public class WheelScript : MonoBehaviour
     [Header("Wheel")]
     public float wheelRadius;
 
+    [Header("Grounded")]
+    public LayerMask groundLayer;
+    public bool grounded;
+    public RaycastHit groundedHit;
+
+
     private void Start()
     {
+
         rb = transform.root.GetComponent<Rigidbody>();
 
         minLength = restLenght - springTravel;
@@ -54,6 +64,48 @@ public class WheelScript : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * wheelAngle);
 
         Debug.DrawRay(transform.position, -transform.up * (springLength + wheelRadius), Color.green);
+
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius, groundLayer))
+        {
+            grounded = true;
+            groundedHit = hit;
+        }
+        else 
+        {
+            grounded = false;
+        }
+
+        Debug.Log(Input.GetAxisRaw("Vertical"));
+
+        if (animator != null) 
+        {
+            if (Input.GetAxisRaw("Vertical") > 0)
+            {
+                animator.SetBool("isMovingForward", true);
+            }
+            else 
+            {
+                animator.SetBool("isMovingForward", false);
+            }
+
+            if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                animator.SetBool("isMovingBack", true);
+            }
+            else
+            {
+                animator.SetBool("isMovingBack", false);
+            }
+
+            if (Input.GetAxisRaw("Vertical") == 0)
+            {
+                animator.SetBool("isStop", true);
+            }
+            else
+            {
+                animator.SetBool("isStop", false);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -71,11 +123,14 @@ public class WheelScript : MonoBehaviour
 
             wheelVelocityLS = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
 
-            Fx = Input.GetAxis("Vertical") * 0.5f * springForce;
+            //Fx = Input.GetAxis("Vertical") * 0.5f * springForce;
+            Fx = Input.GetAxis("Vertical") * speed * springForce;
 
             Fy = wheelVelocityLS.x * springForce;
 
             rb.AddForceAtPosition(suspensionForce + (Fx * transform.forward) + (Fy * -transform.right), hit.point);
+
+            
         
         }
     }
