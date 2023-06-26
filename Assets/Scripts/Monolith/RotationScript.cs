@@ -9,8 +9,8 @@ public class RotationScript : MonoBehaviour
     [SerializeField] GameObject destination;
     [SerializeField] float trailSpeed;
 
-    [Header("Rotation Trigger")]
-    [SerializeField] GameObject trigger;
+    [Header("Rotation Angle")]
+    [SerializeField] float rotation;
     public float angleToRotate = 20f;
     public float speed = 5f;
 
@@ -26,9 +26,11 @@ public class RotationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Active)
+            MonolithLight();
     }
 
+    public bool Active = false;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -36,38 +38,25 @@ public class RotationScript : MonoBehaviour
             targetRotation *= Quaternion.AngleAxis(angleToRotate, Vector3.down);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
 
-           
+            if(targetRotation.eulerAngles.y <= rotation)
+            {
+                Active = true;
+                speed = 0;
+            }
+
         }
 
-        if (collision.collider.CompareTag("Finish"))
-        {
-            Debug.Log("Trigger");
-            speed = 0;
-            MonolithLight();
-        }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Finish"))
-    //    {
-    //        Debug.Log("Trigger");
-    //        speed = 0;
-    //        MonolithLight();
-    //    }
-    //}
 
     void MonolithLight()
     {
-        if (gameObject.activeSelf)
-        {
-            particle.SetActive(true);
-            StartCoroutine(LigthTransformPosition());
-        }
+        particle.SetActive(true);
+        StartCoroutine(LigthTransformPosition());
     }
 
     IEnumerator LigthTransformPosition()
     {
         yield return new WaitForSeconds(3);
-        particle.transform.position = Vector3.MoveTowards(particle.transform.position, destination.transform.position, speed * Time.deltaTime);
+        particle.transform.position = Vector3.MoveTowards(particle.transform.position, destination.transform.position, trailSpeed * Time.deltaTime);
     }
 }

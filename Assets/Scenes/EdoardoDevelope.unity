@@ -4091,12 +4091,6 @@ MonoBehaviour:
   timeBeforeAttack: 3
   enemyAttackSpeed: 10
   knockBackForce: 1
---- !u!1 &1193876390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2482275991274705065, guid: ffe64a14f23d62942b9a503fb7367154,
-    type: 3}
-  m_PrefabInstance: {fileID: 1470763272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194503349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,12 +4224,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194503349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.06, z: -0.06}
+  m_LocalPosition: {x: -0.02999878, y: 1.06, z: -0.05999985}
   m_LocalScale: {x: 1, y: 0.81670433, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 304479571}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1237680845
 GameObject:
@@ -4884,12 +4878,17 @@ PrefabInstance:
         type: 3}
       propertyPath: trigger
       value: 
-      objectReference: {fileID: 1193876390}
+      objectReference: {fileID: 0}
     - target: {fileID: 1180618535572864951, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: particle
       value: 
       objectReference: {fileID: 1194503349}
+    - target: {fileID: 1180618535572864951, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: rotation
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1180618535572864951, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: trailSpeed
@@ -4905,6 +4904,21 @@ PrefabInstance:
       propertyPath: angleToRotate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2482275991274705065, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482275991274705065, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482275991274705065, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trigger
+      objectReference: {fileID: 0}
     - target: {fileID: 3120479562448763565, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: m_IsTrigger
@@ -4913,12 +4927,17 @@ PrefabInstance:
     - target: {fileID: 3224804613629757138, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: m_Size.z
-      value: 0
+      value: 0.07797992
       objectReference: {fileID: 0}
     - target: {fileID: 3224804613629757138, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.5
+      value: -0.44898993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890363063206747060, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8121438649362435837, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
@@ -4980,10 +4999,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monolith
       objectReference: {fileID: 0}
+    - target: {fileID: 8121438649621125516, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8121438650217837111, guid: ffe64a14f23d62942b9a503fb7367154,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121438650462173103, guid: ffe64a14f23d62942b9a503fb7367154,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe64a14f23d62942b9a503fb7367154, type: 3}
@@ -5352,7 +5381,6 @@ GameObject:
   - component: {fileID: 1774922684}
   - component: {fileID: 1774922683}
   - component: {fileID: 1774922682}
-  - component: {fileID: 1774922686}
   m_Layer: 0
   m_Name: Lever (1)
   m_TagString: Untagged
@@ -5439,21 +5467,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1774922686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774922681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3ce12ed8323cf44ac56f9bf296f7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 1194503349}
-  destination: {fileID: 1251751536}
-  speed: 100
 --- !u!1 &1816779945
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2482275991274705065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8106625016165791510}
-  - component: {fileID: 3120479562448763565}
-  m_Layer: 0
-  m_Name: Trigger
-  m_TagString: Finish
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8106625016165791510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2482275991274705065}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -0.47531754, z: -0.16}
-  m_LocalScale: {x: 1.5796016, y: 0.16334087, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8121438649362435837}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3120479562448763565
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2482275991274705065}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1909374, y: 1, z: 1}
-  m_Center: {x: -0.09, y: 0, z: 0}
 --- !u!1 &8121438649362435838
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +31,6 @@ Transform:
   - {fileID: 5890363063206747060}
   - {fileID: 8121438649621125516}
   - {fileID: 8121438650462173103}
-  - {fileID: 8106625016165791510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,6 +388,6 @@ MonoBehaviour:
   particle: {fileID: 0}
   destination: {fileID: 0}
   trailSpeed: 0
-  trigger: {fileID: 0}
+  rotation: 0
   angleToRotate: 20
   speed: 5
