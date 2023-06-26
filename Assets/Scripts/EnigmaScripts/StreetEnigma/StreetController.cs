@@ -7,6 +7,8 @@ public class StreetController : MonoBehaviour
     [SerializeField] GameObject lever;
     [SerializeField] public List<GameObject> rightStreet = new List<GameObject>();
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,10 @@ public class StreetController : MonoBehaviour
     void ActiveLever()
     {
         if(rightStreet.Count <= 0)
+        {
             lever.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 
     public void RemovePlatform(GameObject platform)
