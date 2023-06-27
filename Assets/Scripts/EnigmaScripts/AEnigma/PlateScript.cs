@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PlateScript : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+
+    public bool isActive = false;
+
+    private void OnTriggerStay(Collider other)
     {
-        if (other.transform.name == "leva") 
-        {
-            Debug.Log("Ciao ciao");
-            other.gameObject.SetActive(false);
-        }
+        if(other.CompareTag("Rover") || other.CompareTag("Interactable"))
+            isActive = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Rover") || other.CompareTag("Interactable"))
+            isActive = false;
     }
 }

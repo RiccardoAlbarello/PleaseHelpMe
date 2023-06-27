@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LaserScript : MonoBehaviour
 {
+    [SerializeField]
+    GameObject laserShoot;
 
     [SerializeField]
     LayerMask layerMask;
@@ -12,63 +14,64 @@ public class LaserScript : MonoBehaviour
     private float lastingLaser;
 
     [SerializeField]
-    GameObject laser2;
+    public GameObject laser2;
 
     [SerializeField]
-    GameObject rover;
+    public GameObject rover;
 
     [SerializeField]
-    GameObject cube;
+    public GameObject cube;
 
     [SerializeField]
-    GameObject leva;
-
-    BoxCollider boxColliderLeva;
+    public GameObject leva;
 
     [SerializeField]
-    Transform startRoverPointPosition;
+    public Transform startRoverPointPosition;
 
     [SerializeField]
-    Transform startCubePointPosition;
+    public Transform startCubePointPosition;
 
     [SerializeField]
-    Transform startLevaPointPosition;
+    public Transform startLevaPointPosition;
 
-    LineRenderer lineRenderer;
+
+    public bool line;
+
+    public bool done;
+
+
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+       
         StartCoroutine(CastRaycast());
     }
 
-    IEnumerator CastRaycast() 
+    IEnumerator CastRaycast()
     {
-        while (true) 
+        while (true)
         {
-            SpawnLine();
-            RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity, layerMask))
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.right) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
+            line = false;
+            yield return new WaitForSeconds(lastingLaser);
+            done = false;
 
-                if (hit.transform.name == "Rover") 
-                {
-                    ResetEnigma();
-                    Debug.Log("RoverColpito");
-                }
-
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.right) * 1000, Color.white);
-                Debug.Log("Did not Hit");
-            }
+            line = true;
             yield return new WaitForSeconds(lastingLaser);
         }
+
     }
+
+    private void Update()
+    {
+        if (line && done == false)
+        {
+            laserShoot.SetActive(!laserShoot.activeSelf);
+            done = true;
+        }
+    }
+
+
+   
 
     public void ResetEnigma()
     {
@@ -78,16 +81,4 @@ public class LaserScript : MonoBehaviour
         leva.GetComponent<LevaScript>().startEnigma = false;
     }
 
-    private void SpawnLine()
-    {
-        lineRenderer.SetPosition(0, gameObject.transform.position);
-        lineRenderer.SetPosition(1, laser2.transform.position);
-    }
-
-    private void DespawnLine()
-    {
-
-        lineRenderer.SetPosition(0, Vector3.zero);
-        lineRenderer.SetPosition(1, Vector3.zero);
-    }
 }
