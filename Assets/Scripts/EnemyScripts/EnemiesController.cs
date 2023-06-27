@@ -71,8 +71,8 @@ public class EnemiesController : MonoBehaviour
         {
 
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, enemyRotationSpeed * Time.deltaTime);
-            Vector3 enemyPos = new Vector3(carController.transform.position.x, 0, carController.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, enemyPos, enemyAttackSpeed * Time.deltaTime);
+            //Vector3 enemyPos = new Vector3(carController.transform.position.x, 0, carController.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, carController.transform.position, enemyAttackSpeed * Time.deltaTime);
 
         }
         else
