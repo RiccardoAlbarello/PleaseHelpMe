@@ -9,6 +9,7 @@ TagManager:
   - Platform
   - Rover
   - Trigger
+  - Restart
   layers:
   - Default
   - TransparentFX

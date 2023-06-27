@@ -6,13 +6,13 @@ public class StreetController : MonoBehaviour
 {
     [SerializeField] GameObject lever;
     [SerializeField] public List<GameObject> rightStreet = new List<GameObject>();
-
-    StreetPlatform StreetPlatform;
+    //[SerializeField] public List<GameObject> SecondStreet = new List<GameObject>();
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        StreetPlatform = FindObjectOfType<StreetPlatform>();
+        
     }
 
     // Update is called once per frame

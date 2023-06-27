@@ -37,10 +37,12 @@ public class CarController : MonoBehaviour
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
 
+    StreetController streetController;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        streetController = FindObjectOfType<StreetController>();
     }
 
     void Update()
@@ -170,6 +172,12 @@ public class CarController : MonoBehaviour
         }
     }
 
-
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Restart"))
+    //    {
+    //        streetController.rightStreet = streetController.SecondStreet;
+    //    }
+    //}
 }
 
