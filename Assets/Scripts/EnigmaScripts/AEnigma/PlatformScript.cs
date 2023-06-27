@@ -8,7 +8,6 @@ public class PlatformScript : MonoBehaviour
     {
         if (other.transform.name == "Leva") 
         {
-            Debug.Log("Ciao ciao");
             other.gameObject.SetActive(false);
         }
     }

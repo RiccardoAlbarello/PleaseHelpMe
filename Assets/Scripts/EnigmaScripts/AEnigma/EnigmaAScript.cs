@@ -16,7 +16,7 @@ public class EnigmaAScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (plate1.isActive == true && plate2.isActive == false) 
+        if (plate1.isActive == true && plate2.isActive == true) 
         {
             monolith.SetActive(true);
         }

@@ -13,7 +13,6 @@ public class LaserShoot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("name: " + other.name);
         if (other.CompareTag("Rover"))
         {
             laserScript.ResetEnigma();
