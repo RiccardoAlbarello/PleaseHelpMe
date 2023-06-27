@@ -7,6 +7,9 @@ TagManager:
   - Rope
   - Interactable
   - Platform
+  - Rover
+  - Trigger
+  - Restart
   layers:
   - Default
   - TransparentFX
@@ -19,9 +22,9 @@ TagManager:
   - Rope
   - Obstacle
   - Wheel
-  - 
-  - 
-  - 
+  - Laser
+  - Rover
+  - Trigger
   - 
   - 
   - 

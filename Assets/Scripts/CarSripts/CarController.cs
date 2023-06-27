@@ -170,6 +170,11 @@ public class CarController : MonoBehaviour
         }
     }
 
+    public void Respawn() 
+    {
+       //Respan to the point 
+    }
+
 
 }
 

@@ -24,7 +24,7 @@ public class EnemiesController : MonoBehaviour
     float attackTimer;
 
     CarController carController;
-    //Rigidbody rb;
+    Rigidbody rb;
 
     Vector3 firstPosition;
     Quaternion firstRotation;
@@ -33,7 +33,7 @@ public class EnemiesController : MonoBehaviour
     void Start()
     {
         carController = FindObjectOfType<CarController>();
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         firstPosition = transform.position;
         firstRotation = transform.rotation;
@@ -54,7 +54,7 @@ public class EnemiesController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, enemyRotationSpeed * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, patrolPoints[index].transform.position, enemySpeed * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, patrolPoints[index].transform.position) == 0)
+        if (Vector3.Distance(transform.position, patrolPoints[index].transform.position) == 0)
         {
             index = Random.Range(minRange, maxRange);
         }
@@ -71,8 +71,8 @@ public class EnemiesController : MonoBehaviour
         {
 
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, enemyRotationSpeed * Time.deltaTime);
-            Vector3 enemyPos = new Vector3(carController.transform.position.x, 0, carController.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, enemyPos, enemyAttackSpeed * Time.deltaTime);
+            //Vector3 enemyPos = new Vector3(carController.transform.position.x, 0, carController.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, carController.transform.position, enemyAttackSpeed * Time.deltaTime);
 
         }
         else
@@ -87,7 +87,7 @@ public class EnemiesController : MonoBehaviour
         {
             isStunRunning = true;
             StartCoroutine(EnemyStun());
-            //KnockBack();
+            KnockBack();
         }
     }
 
@@ -105,11 +105,11 @@ public class EnemiesController : MonoBehaviour
 
     }
 
-    //private void KnockBack()
-    //{
-    //    Vector3 targetPos = carController.gameObject.transform.position;
-    //    Vector3 startPos = transform.position;
-    //    rb.AddForce((startPos - targetPos) * knockBackForce, ForceMode.Impulse);
-    //    //rb.AddForce((targetPos - startPos) * knockBackForce, ForceMode.Impulse);
-    //}
+    private void KnockBack()
+    {
+        Vector3 targetPos = carController.gameObject.transform.position;
+        Vector3 startPos = transform.position;
+        rb.AddForce((startPos - targetPos) * knockBackForce, ForceMode.Impulse);
+        //rb.AddForce((targetPos - startPos) * knockBackForce, ForceMode.Impulse);
+    }
 }
