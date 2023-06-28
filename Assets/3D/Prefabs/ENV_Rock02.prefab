@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8253566873161995145}
   - component: {fileID: 8253566873161995150}
   - component: {fileID: 8253566873161995151}
+  - component: {fileID: 4216991911736631156}
   m_Layer: 0
   m_Name: Rock02_low (1)
   m_TagString: Untagged
@@ -840,6 +841,20 @@ MonoBehaviour:
   m_OriginalMeshObject: {fileID: 9202909206818758641, guid: e19031e6525706048bbe47af93d56172,
     type: 3}
   m_Mode: 0
+--- !u!64 &4216991911736631156
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253566873161995149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8253566873965416439
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +866,7 @@ GameObject:
   - component: {fileID: 8253566873965416438}
   - component: {fileID: 8253566873965416432}
   - component: {fileID: 8253566873965416433}
+  - component: {fileID: 3468932062687251489}
   m_Layer: 0
   m_Name: Rock01_low (1)
   m_TagString: Untagged
@@ -923,6 +939,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3468932062687251489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253566873965416439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1009314107738614395, guid: e19031e6525706048bbe47af93d56172, type: 3}
 --- !u!1 &8253566873976104989
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +964,7 @@ GameObject:
   - component: {fileID: 8253566873976104988}
   - component: {fileID: 8253566873976104990}
   - component: {fileID: 8253566873976104991}
+  - component: {fileID: 544861230688200307}
   m_Layer: 0
   m_Name: Rock04_low (1)
   m_TagString: Untagged
@@ -1006,6 +1037,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &544861230688200307
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253566873976104989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5785724798839700787, guid: e19031e6525706048bbe47af93d56172, type: 3}
 --- !u!1 &8253566874896624024
 GameObject:
   m_ObjectHideFlags: 0

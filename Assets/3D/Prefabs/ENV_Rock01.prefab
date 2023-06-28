@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3878701028608536054}
   - component: {fileID: 3878701028608536008}
   - component: {fileID: 3878701028608536055}
+  - component: {fileID: 8124040368083345147}
   m_Layer: 0
   m_Name: Rock03_low (1)
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8124040368083345147
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878701028608536053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1726346240240109738, guid: e19031e6525706048bbe47af93d56172, type: 3}
 --- !u!1 &3878701028891624112
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +143,7 @@ GameObject:
   - component: {fileID: 3878701030490437248}
   - component: {fileID: 3878701030490437250}
   - component: {fileID: 3878701030490437249}
+  - component: {fileID: 6883237553412298946}
   m_Layer: 0
   m_Name: Rock04_low (1)
   m_TagString: Untagged
@@ -200,6 +216,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6883237553412298946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878701030490437263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5785724798839700787, guid: e19031e6525706048bbe47af93d56172, type: 3}
 --- !u!1 &3878701030599207393
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +241,7 @@ GameObject:
   - component: {fileID: 3878701030599207394}
   - component: {fileID: 3878701030599207396}
   - component: {fileID: 3878701030599207395}
+  - component: {fileID: 8675163417636862875}
   m_Layer: 0
   m_Name: Rock05_low (1)
   m_TagString: Untagged
@@ -283,3 +314,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8675163417636862875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878701030599207393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3134445648143234454, guid: e19031e6525706048bbe47af93d56172, type: 3}
