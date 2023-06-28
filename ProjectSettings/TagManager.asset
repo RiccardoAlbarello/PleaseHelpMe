@@ -10,6 +10,7 @@ TagManager:
   - Rover
   - Trigger
   - Restart
+  - Ball
   layers:
   - Default
   - TransparentFX
