@@ -23,7 +23,7 @@ public class StreetPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && gameObject == streetController.rightStreet[0])
+        if(other.gameObject.CompareTag("Rover") && gameObject == streetController.rightStreet[0])
         {
             renderers.material.color = Color.yellow;
             streetController.RemovePlatform(gameObject);
