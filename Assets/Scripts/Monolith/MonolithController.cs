@@ -14,12 +14,14 @@ public class MonolithController : MonoBehaviour
     public float angleToRotate = 20f;
     public float speed = 5f;
 
+    Collider colliders;
 
     Quaternion targetRotation;
 
     // Start is called before the first frame update
     void Start()
     {
+        colliders = GetComponent<Collider>();
         targetRotation = transform.rotation;
     }
 
@@ -40,6 +42,7 @@ public class MonolithController : MonoBehaviour
 
             if(targetRotation.eulerAngles.y <= rotation)
             {
+                colliders.enabled = false;
                 Active = true;
                 speed = 0;
                 GameManager.Instance.monolithCollection.Add(gameObject);
