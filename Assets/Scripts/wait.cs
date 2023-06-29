@@ -16,6 +16,6 @@ public class wait : MonoBehaviour
     {
         yield return new WaitForSeconds(wait_time);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

@@ -11,11 +11,11 @@ public class PlatformController : MonoBehaviour
     [SerializeField] float timeBeforeDeactivated;
 
     [SerializeField] Renderer emissiveMaterial;
-    Renderer renderers;
+    
 
     private void Update()
     {
-        renderers = GetComponent<Renderer>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
