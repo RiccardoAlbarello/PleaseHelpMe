@@ -15,7 +15,6 @@ public class MonolithController : MonoBehaviour
     public float speed = 5f;
 
     Collider colliders;
-    SaveExample saveEx;
 
     Quaternion targetRotation;
 
@@ -24,7 +23,6 @@ public class MonolithController : MonoBehaviour
     {
         colliders = GetComponent<Collider>();
         targetRotation = transform.rotation;
-        saveEx = FindObjectOfType<SaveExample>();
     }
 
     // Update is called once per frame
@@ -48,7 +46,6 @@ public class MonolithController : MonoBehaviour
                 Active = true;
                 speed = 0;
                 GameManager.Instance.monolithCollection.Add(gameObject);
-                saveEx.numberOfEnigmi++;
             }
 
         }
