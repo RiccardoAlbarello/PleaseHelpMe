@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject optionsCanvas;
+    [SerializeField] GameObject principalMenu;
     public SaveExample sE;
     
 
@@ -26,10 +27,12 @@ public class UIManager : MonoBehaviour
     public void Settings()
     {
         optionsCanvas.SetActive(true);
+        principalMenu.SetActive(false);
     }
 
     public void QuitSettings()
     {
         optionsCanvas.SetActive(false);
+        principalMenu.SetActive(true);
     }
 }
