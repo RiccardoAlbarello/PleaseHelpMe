@@ -7,6 +7,7 @@ public class MudEnigma : MonoBehaviour
     [SerializeField] GameObject lever;
     [SerializeField] List<GameObject> platforms = new List<GameObject>();
     private List<GameObject> platformCheck = new List<GameObject>();
+    SaveExample sE;
 
     
 
@@ -28,6 +29,9 @@ public class MudEnigma : MonoBehaviour
         if(platformCheck.Count <= 0)
         {
             lever.SetActive(true);
+            // bool enigma qua
+            sE.enigma2 = true;
+
         }
         //else
         //{
