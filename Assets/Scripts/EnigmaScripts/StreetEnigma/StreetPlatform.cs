@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class StreetPlatform : MonoBehaviour
 {
-    [SerializeField] public Material emissiveMaterial;
+    //[SerializeField] public Material emissiveMaterial;
     StreetController streetController;
-    //Renderer renderers;
+    Material emissiveMaterial;
     Collider colliders;
     // Start is called before the first frame update
     void Start()
     {
         streetController = FindObjectOfType<StreetController>();
-        //renderers = GetComponent<Renderer>();
+        emissiveMaterial = GetComponent<Renderer>().material;
         colliders = GetComponent<Collider>();
     }
 
