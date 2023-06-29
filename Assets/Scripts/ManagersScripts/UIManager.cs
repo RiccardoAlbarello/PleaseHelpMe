@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         sE.SaveBool();
+        sE.SaveGame();
         Debug.Log("SaveBool");
         Application.Quit();
     }

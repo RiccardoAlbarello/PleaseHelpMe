@@ -33,10 +33,7 @@ public class SaveExample : MonoBehaviour
         Debug.Log("Game Saved!");
 
 
-        PlayerPrefs.SetInt("enigma1", (enigma1 ? 1 : 0));
-        PlayerPrefs.SetInt("enigma2", (enigma2 ? 1 : 0));
-        PlayerPrefs.SetInt("enigma3", (enigma3 ? 1 : 0));
-        PlayerPrefs.SetInt("enigma4", (enigma4 ? 1 : 0));//salvare bool
+        
     }
     public void SaveBool()
     {
@@ -54,6 +51,9 @@ public class SaveExample : MonoBehaviour
             transform.position = new Vector3(saveData.positions[0].x, saveData.positions[0].y, saveData.positions[0].z);
             Debug.Log("Game Loaded!");
             enigma1 = (PlayerPrefs.GetInt("enigma1") != 0); //caricare bool
+            enigma2 = (PlayerPrefs.GetInt("enigma2") != 0); //caricare bool
+            enigma3 = (PlayerPrefs.GetInt("enigma3") != 0); //caricare bool
+            enigma4 = (PlayerPrefs.GetInt("enigma4") != 0); //caricare bool
         }
     }
     public void Save()
