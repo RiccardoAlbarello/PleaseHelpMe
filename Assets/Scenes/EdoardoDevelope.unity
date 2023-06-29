@@ -611,7 +611,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210666280}
-  - component: {fileID: 210666279}
   m_Layer: 0
   m_Name: StreetManager
   m_TagString: Untagged
@@ -619,26 +618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &210666279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210666278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf11f91d1a57bc46ab0d920e0e22396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lever: {fileID: 1774922681}
-  rightStreet:
-  - {fileID: 973426272}
-  - {fileID: 1584474373}
-  - {fileID: 684239867}
-  - {fileID: 862880444}
-  - {fileID: 290510781}
-  - {fileID: 1993673253}
 --- !u!4 &210666280
 Transform:
   m_ObjectHideFlags: 0
@@ -763,6 +742,7 @@ GameObject:
   - component: {fileID: 274941172}
   - component: {fileID: 274941171}
   - component: {fileID: 274941170}
+  - component: {fileID: 274941173}
   m_Layer: 6
   m_Name: Street (8)
   m_TagString: Platform
@@ -848,6 +828,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274941168}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &274941173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274941168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &290510781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5df0de97ed4f2d54181288ce9f1aad17,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Rover
       objectReference: {fileID: 0}
     - target: {fileID: 3305010703223600605, guid: 5df0de97ed4f2d54181288ce9f1aad17,
         type: 3}
@@ -1581,6 +1574,7 @@ GameObject:
   - component: {fileID: 472513464}
   - component: {fileID: 472513463}
   - component: {fileID: 472513462}
+  - component: {fileID: 472513465}
   m_Layer: 6
   m_Name: Street (3)
   m_TagString: Platform
@@ -1666,6 +1660,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472513460}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &472513465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472513460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &515300521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,6 +3326,7 @@ GameObject:
   - component: {fileID: 1030813281}
   - component: {fileID: 1030813280}
   - component: {fileID: 1030813279}
+  - component: {fileID: 1030813282}
   m_Layer: 6
   m_Name: Street
   m_TagString: Platform
@@ -3404,6 +3412,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030813277}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1030813282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030813277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &1079610534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,6 +3618,7 @@ GameObject:
   - component: {fileID: 1110298755}
   - component: {fileID: 1110298754}
   - component: {fileID: 1110298753}
+  - component: {fileID: 1110298756}
   m_Layer: 6
   m_Name: Street (16)
   m_TagString: Platform
@@ -3682,6 +3704,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110298751}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1110298756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110298751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &1135782859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,6 +3729,7 @@ GameObject:
   - component: {fileID: 1135782863}
   - component: {fileID: 1135782862}
   - component: {fileID: 1135782861}
+  - component: {fileID: 1135782864}
   m_Layer: 6
   m_Name: Street (2)
   m_TagString: Platform
@@ -3779,6 +3815,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135782859}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1135782864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135782859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &1139888106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +4752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1448177582}
+  - component: {fileID: 1448177583}
   m_Layer: 6
   m_Name: _Street
   m_TagString: Untagged
@@ -4757,6 +4807,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1448177583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448177581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf11f91d1a57bc46ab0d920e0e22396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lever: {fileID: 1774922681}
+  rightStreet:
+  - {fileID: 973426272}
+  - {fileID: 1584474373}
+  - {fileID: 684239867}
+  - {fileID: 862880444}
+  - {fileID: 290510781}
+  - {fileID: 1993673253}
+  secondStreet:
+  - {fileID: 973426272}
+  - {fileID: 1584474373}
+  - {fileID: 684239867}
+  - {fileID: 862880444}
+  - {fileID: 290510781}
+  - {fileID: 1993673253}
+  deactivePlatform: []
 --- !u!1 &1495473089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,6 +5055,7 @@ GameObject:
   - component: {fileID: 1655139086}
   - component: {fileID: 1655139085}
   - component: {fileID: 1655139084}
+  - component: {fileID: 1655139087}
   m_Layer: 6
   m_Name: Street (11)
   m_TagString: Platform
@@ -5062,6 +5141,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655139082}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1655139087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655139082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &1758757875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3305010703223600605, guid: 5df0de97ed4f2d54181288ce9f1aad17,
@@ -5427,6 +5519,7 @@ GameObject:
   - component: {fileID: 1904739081}
   - component: {fileID: 1904739080}
   - component: {fileID: 1904739079}
+  - component: {fileID: 1904739082}
   m_Layer: 6
   m_Name: Street (17)
   m_TagString: Restart
@@ -5512,6 +5605,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904739077}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1904739082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904739077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84924bdfa9a137f46bf126f22f8d14ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPlatform: 0
 --- !u!1 &1943094254
 GameObject:
   m_ObjectHideFlags: 0

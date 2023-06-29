@@ -33,9 +33,9 @@ public class MonolithController : MonoBehaviour
     public bool Active = false;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Rover"))
         {
-            targetRotation *= Quaternion.AngleAxis(angleToRotate, Vector3.down);
+            targetRotation *= Quaternion.AngleAxis(angleToRotate, Vector3.left);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
 
             if(targetRotation.eulerAngles.y <= rotation)
