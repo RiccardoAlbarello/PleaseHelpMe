@@ -50,7 +50,7 @@ public class EnigmaCController : MonoBehaviour
             pedanaDestra.gameObject.SetActive(true);
 
             cameraEnigma.gameObject.SetActive(true);
-
+            
             Camera.main.gameObject.SetActive(false);
         }
 
