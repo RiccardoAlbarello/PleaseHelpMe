@@ -25,6 +25,16 @@ public class EnigmaCController : MonoBehaviour
     [SerializeField]
     HoleScript holeScript;
 
+    [SerializeField]
+    StartEnigma startEnigma;
+
+    [SerializeField]
+    GameObject Porta;
+
+    [SerializeField]
+    Camera cameraEnigma;
+
+
     bool isEnigmaCompleted = false;
 
     private float curveAmount = 5.0f;
@@ -33,9 +43,24 @@ public class EnigmaCController : MonoBehaviour
     void Update()
     {
 
+        if (startEnigma.startEnigma) 
+        {
+            Porta.SetActive(true);
+
+            pedanaDestra.gameObject.SetActive(true);
+
+            cameraEnigma.gameObject.SetActive(true);
+
+            Camera.main.gameObject.SetActive(false);
+        }
+
         if (holeScript.ballIsInHole) 
         {
             isEnigmaCompleted = true;
+            Porta.SetActive(false);
+            pedanaDestra.gameObject.SetActive(false);
+            cameraEnigma.gameObject.SetActive(true);
+            Camera.main.gameObject.SetActive(true);
         }
 
         if (isEnigmaCompleted) 
