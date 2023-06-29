@@ -8,6 +8,8 @@ public class SaveExample : MonoBehaviour
     public bool enigma2 = false;
     public bool enigma3 = false;
     public bool enigma4 = false;
+
+    public int numberOfEnigmi;
     private void Start()
     {
         LoadGame();
@@ -32,7 +34,7 @@ public class SaveExample : MonoBehaviour
         SaveManager.SaveGameState(saveData);
         Debug.Log("Game Saved!");
 
-
+        PlayerPrefs.SetInt("numberOfEnigmi", numberOfEnigmi);
         
     }
     public void SaveBool()
@@ -54,6 +56,8 @@ public class SaveExample : MonoBehaviour
             enigma2 = (PlayerPrefs.GetInt("enigma2") != 0); //caricare bool
             enigma3 = (PlayerPrefs.GetInt("enigma3") != 0); //caricare bool
             enigma4 = (PlayerPrefs.GetInt("enigma4") != 0); //caricare bool
+
+            PlayerPrefs.GetInt("numberOfEnigmi");
         }
     }
     public void Save()
