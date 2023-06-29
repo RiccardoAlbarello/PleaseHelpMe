@@ -18,7 +18,7 @@ public class PlatformController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Rover"))
         {
             mudEnigma.RemovePlatform(gameObject);
             renderers.material.color = Color.yellow;
