@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SaveExample : MonoBehaviour
 {
-    public bool enigma1;
+    public bool enigma1 = false;
+    public bool enigma2 = false;
+    public bool enigma3 = false;
+    public bool enigma4 = false;
     private void Start()
     {
         LoadGame();
@@ -18,7 +21,7 @@ public class SaveExample : MonoBehaviour
             LoadGame();
     }
 
-    private void SaveGame()
+    public void SaveGame()
     {
         SaveData saveData = new SaveData();
         saveData.positions = new SaveData.Position[1]; //dont do like that, im just showing example here
@@ -28,7 +31,19 @@ public class SaveExample : MonoBehaviour
         saveData.positions[0].z = transform.position.z;
         SaveManager.SaveGameState(saveData);
         Debug.Log("Game Saved!");
-        PlayerPrefs.SetInt("enigma1", (enigma1 ? 1 : 0)); //salvare bool
+
+
+        PlayerPrefs.SetInt("enigma1", (enigma1 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma2", (enigma2 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma3", (enigma3 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma4", (enigma4 ? 1 : 0));//salvare bool
+    }
+    public void SaveBool()
+    {
+        PlayerPrefs.SetInt("enigma1", (enigma1 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma2", (enigma2 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma3", (enigma3 ? 1 : 0));
+        PlayerPrefs.SetInt("enigma4", (enigma4 ? 1 : 0));//salvare bool
     }
 
     private void LoadGame()

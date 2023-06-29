@@ -7,6 +7,7 @@ public class StreetController : MonoBehaviour
     [SerializeField] GameObject lever;
     [SerializeField] public List<GameObject> rightStreet = new List<GameObject>();
     [SerializeField] public List<GameObject> secondStreet = new List<GameObject>();
+    SaveExample sE;
     //[SerializeField] public List<GameObject> SecondStreet = new List<GameObject>();
 
     [SerializeField] public DeactivePlatform[] deactivePlatform;
@@ -41,6 +42,8 @@ public class StreetController : MonoBehaviour
             lever.SetActive(true);
             //Destroy(gameObject);
             //StreetPlatform.enabled = false;
+            //bool enigma qua
+            sE.enigma1 = true;
         }
     }
 

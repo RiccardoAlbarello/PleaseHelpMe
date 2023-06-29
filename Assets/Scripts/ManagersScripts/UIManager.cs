@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject optionsCanvas;
+    public SaveExample sE;
     
 
     public void PlayGame()
@@ -16,6 +17,8 @@ public class UIManager : MonoBehaviour
 
     public void QuitGame()
     {
+        sE.SaveBool();
+        Debug.Log("SaveBool");
         Application.Quit();
     }
 
