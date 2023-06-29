@@ -96,7 +96,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Emissive: 0
+    - _Emissive: 1
     - _Emissive_Strength: 2.1
     - _QueueControl: 0
     - _QueueOffset: 0
