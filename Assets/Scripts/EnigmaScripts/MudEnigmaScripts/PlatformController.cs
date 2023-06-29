@@ -10,6 +10,7 @@ public class PlatformController : MonoBehaviour
     [Header("Time Settings")]
     [SerializeField] float timeBeforeDeactivated;
 
+    [SerializeField] Material emissiveMaterial;
     Renderer renderers;
 
     private void Update()
@@ -21,7 +22,7 @@ public class PlatformController : MonoBehaviour
         if (other.gameObject.CompareTag("Rover"))
         {
             mudEnigma.RemovePlatform(gameObject);
-            renderers.material.color = Color.yellow;
+            emissiveMaterial.SetFloat("_Emissive", 1);
             StartCoroutine(Deactive());
         }
     }
@@ -29,7 +30,7 @@ public class PlatformController : MonoBehaviour
     IEnumerator Deactive()
     {
         yield return new WaitForSeconds(timeBeforeDeactivated);
-        renderers.material.color = Color.black;
+        emissiveMaterial.SetFloat("_Emissive", 0);
         mudEnigma.AddPlatform(gameObject);
     }
 }
