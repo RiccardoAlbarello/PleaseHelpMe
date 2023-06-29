@@ -59,7 +59,7 @@ public class StreetController : MonoBehaviour
         for (int i = 0; i < secondStreet.Count; i++)
         {
             secondStreet[i].GetComponent<Collider>().enabled = true;
-            secondStreet[i].GetComponent<Material>().SetFloat("_Emissive", 0);
+            secondStreet[i].GetComponent<Renderer>().material.SetFloat("_Emissive", 0);
         }
     }
 

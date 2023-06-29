@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class StreetPlatform : MonoBehaviour
 {
-    [SerializeField] public Material emissiveMaterial;
+    //[SerializeField] public Material emissiveMaterial;
     StreetController streetController;
-    //Renderer renderers;
+    Material emissiveMaterials;
     Collider colliders;
     // Start is called before the first frame update
     void Start()
     {
         streetController = FindObjectOfType<StreetController>();
-        //renderers = GetComponent<Renderer>();
+        emissiveMaterials = GetComponent<Renderer>().material;
         colliders = GetComponent<Collider>();
     }
 
@@ -26,7 +26,7 @@ public class StreetPlatform : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Rover") && gameObject == streetController.rightStreet[0])
         {
-            emissiveMaterial.SetFloat("_Emissive", 1);
+            emissiveMaterials.SetFloat("_Emissive", 1);
             //renderers.material.color = Color.yellow;
             streetController.RemovePlatform(gameObject);
             colliders.enabled = false;
