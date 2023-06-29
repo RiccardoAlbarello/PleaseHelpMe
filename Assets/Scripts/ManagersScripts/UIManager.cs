@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject optionsCanvas;
+    
 
     public void PlayGame()
     {
