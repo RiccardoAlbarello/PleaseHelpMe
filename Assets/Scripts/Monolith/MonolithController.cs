@@ -42,6 +42,7 @@ public class MonolithController : MonoBehaviour
             {
                 Active = true;
                 speed = 0;
+                GameManager.Instance.monolithCollection.Add(gameObject);
             }
 
         }
